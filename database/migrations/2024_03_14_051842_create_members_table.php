@@ -10,15 +10,15 @@ return new class extends Migration
      * Run the migrations.
      */
     // up是執行，down是倒退，往前往後的意思
-    public function up(): void
+     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            // $table->string('name');
-            // $table->string('email')->unique();
-            // $table->timestamp('email_verified_at')->nullable();
-            // $table->string('password');
-            // $table->rememberToken();
+            $table->integer('user_id')->comment('會員id');
+            $table->longtext('address')->comment('地址');
+            $table->string('phone')->comment('電話');
+            $table->string('dountry')->comment('國籍');
+            // (timestamps更新、上傳資料庫的時間)
             $table->timestamps();
         });
     }
@@ -27,8 +27,8 @@ return new class extends Migration
      * Reverse the migrations.
      */
     // up是執行，down是倒退，往前往後的意思
-    public function down(): void
+     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('members');
     }
 };

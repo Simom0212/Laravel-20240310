@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        // 如果有很多筆資料，建立資料
+        $this->call([
+            ProductTypeSeeder::class,
+        ]);
     }
 }

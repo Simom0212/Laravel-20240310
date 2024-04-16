@@ -12,14 +12,14 @@ return new class extends Migration
     // up是執行，down是倒退，往前往後的意思
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            // $table->string('name');
-            // $table->string('email')->unique();
-            // $table->timestamp('email_verified_at')->nullable();
-            // $table->string('password');
-            // $table->rememberToken();
-            $table->timestamps();
+            // (comment定義他叫書名)
+            $table->string('name')->comment('書名');
+            // (nullable允許空值、不輸入)
+            $table->integer('price')->nullable();
+            // (timestamps更新、上傳資料庫的時間)
+            $table->timestamps('');
         });
     }
 
@@ -29,6 +29,7 @@ return new class extends Migration
     // up是執行，down是倒退，往前往後的意思
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        // (dropIfExists丟掉)
+        Schema::dropIfExists('books');
     }
 };

@@ -18,4 +18,11 @@ export default defineConfig({
             },
         }),
     ],
+    // (resolve)他是個物件
+    resolve: {
+        // (alias)他也是個物件
+        alias: {
+            '/images': '/resources/images',
+        },
+    },
 });

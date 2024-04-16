@@ -34,17 +34,22 @@ defineProps({
             >
 
             <template v-else>
+                <!-- 只是把a換成Link而已，使用Link標籤前往指定頁面 -->
+                <!-- 假如要跳到google頁面，要用a標籤 -->
+                <!-- 對內用link，對外用a -->
+                <Link href="/test" class="text-violet-500 mr-4 bg-red-100">resources>js>Pages (去Test頁)</Link>
+
                 <Link
                     :href="route('login')"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >Log in</Link
+                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 bg-blue-100"
+                    >resources>js>Pages>(Log in登入)</Link
                 >
 
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
-                    class="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >Register</Link
+                    class="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 bg-lime-100"
+                    >resources>js>Pages>(Register註冊)</Link
                 >
             </template>
         </div>

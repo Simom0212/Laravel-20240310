@@ -32,6 +32,14 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+
+                                <NavLink :href="route('test')" :active="route().current('test')">
+                                    儀表版
+                                </NavLink>
+
+                                <NavLink :href="route('test')" :active="route().current('test')">
+                                    js>Pages>Auth>AuthenticatedLayout>(test)
+                                </NavLink>
                             </div>
                         </div>
 

@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    // (public民眾)
+    public function member(){
+        // (搭起橋梁hasOne)我要對應(member成員)的資料表 是用我的ID 對應對方的user_id
+        return $this->hasOne(Member::class,'user_id', 'id');
+    }
 }
